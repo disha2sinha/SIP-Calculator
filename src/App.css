@@ -1,0 +1,49 @@
+.App {
+  text-align: center;
+  background: #282e38;
+}
+
+
+.App-header {
+  min-height: 100vh;
+  display: flex-inline;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#form{
+  padding : 10rem;
+  display: flex;
+  flex-direction: row;
+  color:white;
+  flex-wrap: wrap;
+}
+
+#form > div{
+  width : 50%; 
+  text-align: left;
+}
+
+.label{
+  margin: 5px;
+}
+#title{
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+#results{
+  padding : 10rem;
+  display: inline-block;
+  flex-direction: column;
+  color:white;
+  flex-wrap: wrap;
+  border-width: ;
+  border-color: #282e38;
+}
+#results > th{
+  padding : 2px;
+  width : 80vw;
+}
+
