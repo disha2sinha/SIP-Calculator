@@ -3,6 +3,8 @@ import calculateInvestmentResults from "../utils/investment";
 export default function Results({input}){
     const results = calculateInvestmentResults(input);
     console.log(results)
+    if(results.length === 0)
+        return <p>Please enter Valid Data</p>
     const initialInvestment = results[0].valueEndofYear - results[0].interest - results[0].annualinvestment;
     return(
         <table id='results'>
