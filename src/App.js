@@ -9,9 +9,10 @@ const INITIAL_INVEST = {Monthly_Investment : 10000,
   Returns_Rate : 10,
   Period: 5}
 
+const periodisValid = INITIAL_INVEST.Period >= 1;
+
 function App() {
   const [userInput, setuserInput] = useState(INITIAL_INVEST)
-  console.log(typeof(userInput))
   function handleChange(label,newvalue){
     setuserInput(prevuserInput=>{
         return{
@@ -25,7 +26,7 @@ function App() {
     setuserInput(prevuserInput=>{
       return{
       ...prevuserInput,
-      [label] : '' //converts to number
+      [label] : ''
       }
   
   })
@@ -34,7 +35,8 @@ function App() {
     <div className="App">
       <Header className="App-header"/>
       <UserInput placeholder = {INITIAL_INVEST} userInput={userInput} handleChange={handleChange} handleFocus = {handleFocus}/>
-      <Results input = {userInput}/>
+      {!periodisValid && <p>Please Enter Duration greater than 0. </p>}
+      {periodisValid && <Results input = {userInput}/>}
     </div>
   );
 }
